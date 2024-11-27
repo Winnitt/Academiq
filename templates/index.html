@@ -22,11 +22,15 @@
       <!-- Navbar Starts -->
       <nav class="navbar sticky-top navbar-expand-lg navbar-dark navbar-mod">
          <div class="container-fluid">
+            <!-- Replace the text "Academiq" with the logo image -->
             <a class="navbar-brand fw-bold fs-5 px-2 py-1" href="/admin" target="_blank" data-bs-toggle="tooltip"
-               data-bs-placement="bottom" title="Access admin panel">elms</a>
+               data-bs-placement="bottom" title="Access admin panel">
+               <!-- Use static tag for the image -->
+               <img src="{% static 'images/icon/Hanover.png' %}" alt="Academiq Logo" style="height: 60px; width: auto;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
-            <span class=" navbar-toggler-icon"></span>
+               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -52,7 +56,7 @@
                         title="Check your profile">{% block user %}{% endblock  %}</a>
                   </li>
                </ul>
-               <form class="d-flex" action=" {% url 'search' %}" method="GET">
+               <form class="d-flex" action="{% url 'search' %}" method="GET">
                   <input id="searchIn" class="form-control me-2 searchbar" type="search" placeholder="Search courses" aria-label="Search"
                      name="q">
                   <button id="searchBtn" class="btn btn-outline-light" type="submit">Search</button>
@@ -61,8 +65,8 @@
          </div>
       </nav>
       <!-- Navbar Ends -->
-      {% block  content %}
-      {% endblock  %}
-      <script src=" {% static 'js/bootstrap.bundle.min.js' %} "></script>
+      {% block content %}
+      {% endblock %}
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
    </body>
 </html>
